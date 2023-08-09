@@ -1,0 +1,103 @@
+.limits-container
+{
+  position: relative;
+  left:50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  display: grid;
+  align-items: center;
+  grid-gap: 25px;
+  grid-template-rows: repeat(5, auto);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+  'header header header'
+  'header1 header1 header1'
+  'img1 text1 text1'
+  'header2 header2 header2'
+  'text2 text2 img2'
+  'header3 header3 header3'
+  'img3 text3 text3';
+}
+
+.item-1
+{
+  grid-area: header;
+}
+
+.item-2
+{
+  grid-area: img1;
+  
+}
+
+.item-3
+{
+  grid-area: text1;
+}
+
+.item-4
+{
+  grid-area: img2;
+}
+
+.item-5
+{
+  grid-area: text2;
+  text-align: right;
+}
+
+.item-6
+{
+  grid-area: img3;
+}
+
+.item-7
+{
+  grid-area: text3;
+}
+
+.item-8
+{
+  grid-area: header1;
+}
+
+.item-9
+{
+  text-align: right;
+  grid-area: header2;
+}
+
+.item-10
+{
+  grid-area: header3;
+}
+
+img
+{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 1200px) {
+  /*Rearrange all items below each oter*/
+  .limits-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      'header'
+      'header1'
+      'img1'
+      'text1'
+      'header2'
+      'img2'
+      'text2'
+      'header3'
+      'img3'
+      'text3';
+  }
+
+  .item-5, .item-9
+  {
+    text-align: left;
+  }
+}
