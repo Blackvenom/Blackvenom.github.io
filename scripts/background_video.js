@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
     entries.forEach(entry => {
         const visibilityRatio = entry.intersectionRatio;
         const newVolume = initialVolume * visibilityRatio;
-        document.getElementById('debug_output').innerHTML = "Obsvr fired: newVolume: "+newVolume;
         
         video.volume = newVolume;
+        document.getElementById('debug_output').innerHTML = "video.volume: "+video.volume;
     });
     }
 
