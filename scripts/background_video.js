@@ -15,13 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
     //Set initial volume
     video.volume = initialVolume;
 
-    document.getElementById('debug_output').innerHTML = "Observer fired!";
-
     // Function to update volume based on intersection ratio
     function updateVolume(entries, observer) {
     entries.forEach(entry => {
         const visibilityRatio = entry.intersectionRatio;
         const newVolume = initialVolume * visibilityRatio;
+        document.getElementById('debug_output').innerHTML = "Obsvr fired: newVolume: "+newVolume;
         
         video.volume = newVolume;
     });
