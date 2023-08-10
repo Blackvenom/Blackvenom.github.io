@@ -22,7 +22,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const newVolume = initialVolume * visibilityRatio;
         
         video.volume = newVolume;
-        document.getElementById('debug_output').innerHTML = "video.volume: "+video.volume;
+
+        
+        //Workaround for iOS: Apple does not allow javascript to change the volume of an <audio>/<video>
+        //Video unmuted and user scrolled down till video hidden: Mute video
+        if(newVolume == 0 && muteToggle.childNodes[0].classList == "fas fa-volume-high")
+            video.muted = true;
+
+        //video unmuted and user scrolled up till video visible: Unmute video
+        if(newVolume > 0 && muteToggle.childNodes[0].classList == "fas fa-volume-high")
+            video.muted = false;
+
     });
     }
 
