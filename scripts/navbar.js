@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
       navItem.classList.remove("active");
       navIcon.classList.remove("active");
     }
-
+/*
     //Manually readjust the x-translation of "activated" icon
     //=======================
     const idea_icon = document.querySelector(".fa-sharp.fa-solid.fa-lightbulb");
@@ -93,6 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     else {
       idea_icon.style.transform = "translateX(0%)";
-    }
+    }*/
     });
 });
