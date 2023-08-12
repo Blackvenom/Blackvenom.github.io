@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
   var navbar = document.querySelector('.navbar');
-  // select all links in the navbar
+  //Get all list items
+  const list_items = document.querySelectorAll('nav li');
+  //Get all links in the navbar
   const links = document.querySelectorAll('nav a');
-  const links_icons = document.querySelectorAll('nav i');
-  // select all images in the navbar
-  const images = document.querySelectorAll('nav i');
-  // Get all sections
+  //Get all icons in the navbar
+  const icons = document.querySelectorAll('nav i');
+  //Get all sections
   const sections = document.querySelectorAll("section");
 
 
@@ -19,16 +20,18 @@ document.addEventListener('DOMContentLoaded', function() {
       const section = document.querySelector(sectionId); // select the corresponding section
       section.scrollIntoView({ behavior: 'smooth' }); // scroll the page to the section
     });
-    // add click event listener to the corresponding image
-    const image = images[index];
-    image.addEventListener('click', (event) => {
+    // add click event listener to the corresponding icon
+    const icon = icons[index];
+    icon.addEventListener('click', (event) => {
       link.click(); // trigger click event on the corresponding link
     });
   });
-  
-  // Hides the navbar on top of the website
-  //=======================
+
+  //OnScroll event
   window.addEventListener('scroll', function() {
+
+    // Hides the navbar on top of the website
+    //=======================
     if (window.scrollY === 0) {
       navbar.classList.remove('visible');
     } else {
@@ -44,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
         for (let j = 0; j < links.length; j++) {
           const navItem = links[j];
-          const navIcon = links_icons[j];
+          const navIcon = icons[j];
           const sectionId = navItem.getAttribute("href").substring(1);
 
           if (sectionId === section.id) {
@@ -64,14 +67,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = window.scrollY || window.pageYOffset;
     const navItem = links[links.length-1];
-    const navIcon = links_icons[links.length-1];
-
+    const navIcon = icons[links.length-1];
     
     if((scrollTop + windowHeight) >= scrollHeight) {
       //Put all Icons in Navbar to normal state
       for (let j = 0; j < links.length; j++) {
         links[j].classList.remove("active");
-        links_icons[j].classList.remove("active");
+        icons[j].classList.remove("active");
       }
       //Highlight only last icon in Navbar
       navItem.classList.add("active");
@@ -81,8 +83,16 @@ document.addEventListener('DOMContentLoaded', function() {
       navItem.classList.remove("active");
       navIcon.classList.remove("active");
     }
-  });
 
-  
-
+    //Manually readjust the x-translation of "activated" icon
+    //=======================
+    const idea_icon = document.querySelector(".fa-sharp.fa-solid.fa-lightbulb");
+    //const idea_icon = this.document.getElementsByClassName("fa-sharp fa-solid fa-lightbulb")[0];
+    if(idea_icon.classList.contains("active")){
+      idea_icon.style.transform = "translateX(-50%)";
+    }
+    else {
+      idea_icon.style.transform = "translateX(0%)";
+    }
+    });
 });
