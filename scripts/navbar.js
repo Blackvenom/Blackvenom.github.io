@@ -58,6 +58,29 @@ document.addEventListener('DOMContentLoaded', function() {
         break;
       }
     }
+
+    //Workaround for bottom section, as its too small to reach ever the screens-width
+    const windowHeight = window.innerHeight;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.scrollY || window.pageYOffset;
+    const navItem = links[links.length-1];
+    const navIcon = links_icons[links.length-1];
+
+    
+    if((scrollTop + windowHeight) >= scrollHeight) {
+      //Put all Icons in Navbar to normal state
+      for (let j = 0; j < links.length; j++) {
+        links[j].classList.remove("active");
+        links_icons[j].classList.remove("active");
+      }
+      //Highlight only last icon in Navbar
+      navItem.classList.add("active");
+      navIcon.classList.add("active");
+    }
+    else {
+      navItem.classList.remove("active");
+      navIcon.classList.remove("active");
+    }
   });
 
   
