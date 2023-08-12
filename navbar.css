@@ -12,6 +12,7 @@ NavBar
     padding: 10px;
     /*Hide navbar by default*/
     opacity: 0;
+    -webkit-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
     /*Make navbar unclickable*/
     pointer-events: none;
@@ -45,7 +46,9 @@ List Items
 }
 /*Highlight the current active navbar item*/
 .navbar li .active {
+    -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+    -webkit-transform: scale(3) translateX(-7px);
     transform: scale(3) translateX(-7px);
     margin-left: 30px;
 }
@@ -81,5 +84,6 @@ Images
     height: 24px;
     text-align:center;
     cursor: pointer;
+    -webkit-transform: scale(2);
     transform: scale(2);
 }
