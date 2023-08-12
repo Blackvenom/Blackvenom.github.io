@@ -1,4 +1,4 @@
-html, body { height: 100vh; }
+html, body { height: 100vh; -webkit-text-size-adjust: 100%;}
 
 @font-face {
     font-family: 'kingvoon_regularregular';
