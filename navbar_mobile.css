@@ -1,0 +1,56 @@
+.navbar_mobile
+{    
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    min-width: 880px;
+    height: 200px;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, .3);  
+    backdrop-filter: blur(5px);
+    visibility: hidden;
+}
+
+/*Show Mobile Navbar only on small screens*/
+@media (max-width: 1200px) {
+    .navbar_mobile
+    {  
+        visibility: visible;
+    }
+}
+
+.navbar_mobile ul
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap:0;
+    padding: 0;
+    list-style: none;
+    height: 100%;
+}
+
+.navbar_mobile ul li
+{
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar_mobile ul li a
+{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    
+}
+
+.navbar_mobile ul li i
+{
+    color: white;
+    transform: scale(4);
+    padding: 40px;
+    transition: 0.3s;
+}
