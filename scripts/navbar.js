@@ -1,14 +1,36 @@
+/*=====================================================================================
+This script controls both the desktop/tablet navbar (located on the right edge of screen)
+as well as the mobile-navbar (located on the bottom edge of the screen)
+Following functions are implemented:
+
+- Choose on startup which navbar is used and assign for other features
+- Jumps to corresponding section on click of each navbar item
+- Hides the navbar on top of the website
+- Highlights the corresponding navbar item depending on the current section
+=====================================================================================*/
+
 document.addEventListener('DOMContentLoaded', function() {
-  var navbar = document.querySelector('.navbar');
-  //Get all list items
-  const list_items = document.querySelectorAll('nav li');
+
+  function getActiveNavbar()
+  {
+    /*Select Desktop or Mobile Navbar based: They are switched via media-queries in respective css file*/
+    const navbar = document.querySelector('.navbar');
+    const navbar_mobile = document.querySelector('.navbar_mobile');
+
+    if(window.getComputedStyle(navbar).getPropertyValue("visibility") == "hidden")
+      return navbar_mobile;
+    else
+      return navbar;
+  }
+  
+  const navbar = getActiveNavbar();
+
   //Get all links in the navbar
-  const links = document.querySelectorAll('nav a');
+  const links = document.querySelectorAll('.' + navbar.className + ' a');
   //Get all icons in the navbar
-  const icons = document.querySelectorAll('nav i');
+  const icons = document.querySelectorAll('.' + navbar.className + ' i');
   //Get all sections
   const sections = document.querySelectorAll("section");
-
 
   // Jumps to corresponding section on click of each navbar item
   //=======================

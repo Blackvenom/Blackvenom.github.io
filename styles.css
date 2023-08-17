@@ -84,7 +84,7 @@ html, body { height: 100vh;}
         flex-direction: column;
     }
 }
-.icon
+.media .icon
 {
     width: 100px;
     height: 100px;
@@ -103,7 +103,7 @@ html, body { height: 100vh;}
     -webkit-tap-highlight-color: transparent;
     -webkit-user-select: none;
 }
-.icon:hover
+.media .icon:hover
 {
     width: 400px;
     cursor: pointer;
@@ -113,19 +113,19 @@ html, body { height: 100vh;}
     color: #fff;
 }
 
-.icon:hover i
+.media .icon:hover i
 {
     color: #fff;
 }
-.icon .fa-facebook-f
+.media .icon .fa-facebook-f
 {
     color: #1A6ED8;
 }
-.fb:hover
+.media .fb:hover
 {
     background: #1A6ED8;
 }
-.icon .fa-instagram
+.media .icon .fa-instagram
 {
     color: #C13584;
 }
@@ -133,7 +133,7 @@ html, body { height: 100vh;}
 {
     background: #C13584;
 }
-.icon .fa-envelope
+.media .icon .fa-envelope
 {
     color: #1DB954;
 }

@@ -5,11 +5,15 @@
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
-    min-width: 880px;
-    height: 200px;
+    height: 100px;
     z-index: 99;
     background-color: rgba(0, 0, 0, .3);  
     backdrop-filter: blur(5px);
+    /*Hide navbar by default*/
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
     visibility: hidden;
 }
 
@@ -21,36 +25,73 @@
     }
 }
 
+.navbar_mobile.visible
+{
+    /*Show navbar*/
+    opacity: 1;
+    /*Make navbar clickable*/
+    pointer-events: initial;
+}
+
 .navbar_mobile ul
 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
     gap:0;
     padding: 0;
     list-style: none;
     height: 100%;
 }
 
+/*=================================
+Container for Links and Icons
+=================================*/
 .navbar_mobile ul li
 {
-    position: relative;
     text-align: center;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
-.navbar_mobile ul li a
-{
-    color: white;
-    text-decoration: none;
-    font-size: 30px;
-    
-}
-
+/*=================================
+Icons
+=================================*/
 .navbar_mobile ul li i
 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     color: white;
-    transform: scale(4);
-    padding: 40px;
+    opacity: 0.8;
+    -webkit-transform: translateX(-50%) translateY(-50%) scale(3);
+    transform: translateX(-50%) translateY(-50%) scale(3);
     transition: 0.3s;
+}
+
+.navbar_mobile ul li i.active
+{
+    opacity: 1.0;
+    -webkit-transform: translateX(-50%) translateY(-175%) scale(3);
+    transform: translateX(-50%) translateY(-175%) scale(3);
+}
+
+/*=================================
+Links
+=================================*/
+.navbar_mobile ul li a
+{
+    position: absolute;
+    bottom: 0%;
+    color: white;
+    text-decoration: none;
+    font-family: 'kingvoon_regularregular';
+    font-size: 15px;
+    /*Hide Links by default*/
+    display: none;
+}
+
+.navbar_mobile a.active
+{
+    display: inline;
 }
