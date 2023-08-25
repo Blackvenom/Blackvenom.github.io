@@ -52,6 +52,7 @@ Container for Links and Icons
     display: flex;
     flex-direction: column;
     position: relative;
+    align-items: center;
 }
 
 /*=================================
@@ -65,7 +66,7 @@ Icons
     color: white;
     opacity: 0.8;
     -webkit-transform: translateX(-50%) translateY(-50%) scale(3);
-    transform: translateX(-50%) translateY(-50%) scale(3);
+    transform: translateX(-50%) translateY(-50%) scale(2.5);
     transition: 0.3s;
 }
 
@@ -73,7 +74,7 @@ Icons
 {
     opacity: 1.0;
     -webkit-transform: translateX(-50%) translateY(-175%) scale(3);
-    transform: translateX(-50%) translateY(-175%) scale(3);
+    transform: translateX(-50%) translateY(-175%) scale(2.5);
 }
 
 /*=================================
@@ -87,6 +88,7 @@ Links
     text-decoration: none;
     font-family: 'kingvoon_regularregular';
     font-size: 15px;
+    height: 2.8em;
     /*Hide Links by default*/
     display: none;
 }
