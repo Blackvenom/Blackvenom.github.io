@@ -83,10 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
         break;
       }
     }
-
+    
     //Workaround for bottom section, as its too small to reach ever the screens-width
+    //Height of visible area (excluding scrollbars, ...)
     const windowHeight = window.innerHeight;
+    //Complete document height (as if the whole scrolling height would be visible)
     const scrollHeight = document.documentElement.scrollHeight;
+    //Amount of Y-Pixels that have been scrolled*
     const scrollTop = window.scrollY || window.pageYOffset;
     const navItem = links[links.length-1];
     const navIcon = icons[links.length-1];
@@ -105,7 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
       navItem.classList.remove("active");
       navIcon.classList.remove("active");
     }
-/*
+    
+    /*
     //Manually readjust the x-translation of "activated" icon
     //=======================
     const idea_icon = document.querySelector(".fa-sharp.fa-solid.fa-lightbulb");
