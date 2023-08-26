@@ -27,7 +27,7 @@ NavBar
 }
 
 /*Show Desktop Navbar only on bigger screens*/
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
     .navbar
     {  
         visibility: visible;
