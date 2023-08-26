@@ -1,5 +1,12 @@
 html, body { height: 100vh;}
 
+@media (max-width: 1200px) {
+    footer
+    {
+        padding-bottom: 100px;
+    }
+}
+
 @font-face {
     font-family: 'kingvoon_regularregular';
     src: url('fonts/kingvoonregular-gox3o-webfont.woff2') format('woff2'),
