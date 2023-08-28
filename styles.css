@@ -31,12 +31,19 @@ html, body { height: 100vh;}
 .title
 {
     position: absolute;
-    top: 0;
+    top: 2%;
     width: 100%;
     text-align: center;
     font-family:'Handelson';
-    font-size:8vw;
+    font-size:7vw;
     color:rgb(240, 240, 240);
+}
+
+@media (max-width: 1024px) {
+    .title
+    {
+        font-size:15vw;
+    }
 }
 
 @keyframes fade-in {
@@ -50,6 +57,14 @@ html, body { height: 100vh;}
     font-size: 75px;
     width: 100%;
     height: 10vh;
+    white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+    .description_title
+    { 
+        font-size:13vw;
+    }
 }
 
 .description_text
