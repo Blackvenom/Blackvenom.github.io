@@ -55,9 +55,6 @@ html, body { height: 100vh;}
 {   
     font-family:'Handelson';
     font-size: 75px;
-    width: 100%;
-    height: 10vh;
-    white-space: nowrap;
 }
 
 @media (max-width: 1024px) {
