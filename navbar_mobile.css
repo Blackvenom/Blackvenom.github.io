@@ -86,9 +86,9 @@ Links
     bottom: 0%;
     color: white;
     text-decoration: none;
-    font-family: 'kingvoon_regularregular';
-    font-size: 15px;
-    height: 2.8em;
+    font-family:'Handelson';
+    font-size: 20px;
+    height: 2.3em;
     /*Hide Links by default*/
     display: none;
 }

@@ -3,7 +3,7 @@ NavBar
 =================================*/
 .navbar
 {
-    font-family: 'kingvoon_regularregular';
+    font-family:'Handelson';
     position: fixed;
     /* Center vertically*/
     top: 50%;
@@ -59,7 +59,7 @@ List Items
     transition: all 0.3s ease-in-out;
     -webkit-transform: scale(3) translateX(-7px);
     transform: scale(3) translateX(-7px);
-    margin-left: 30px;
+    margin-left: 50px;
 }
 
 /*=================================
@@ -69,8 +69,8 @@ Links
     display: none;
     color: #fff;
     text-decoration: none;
-    font-size: 30px;
-    margin-right: 15px;
+    font-size: 40px;
+    margin-right: 25px;
 }
 
 .navbar a.active {
