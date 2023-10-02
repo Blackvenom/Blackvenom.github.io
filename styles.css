@@ -118,6 +118,12 @@ html, body { height: 100vh;}
     -webkit-tap-highlight-color: transparent;
     -webkit-user-select: none;
 }
+
+.media a
+{
+    text-decoration: none !important; /* Use !important to ensure it takes precedence */
+}
+
 .media .icon:hover
 {
     width: 400px;
