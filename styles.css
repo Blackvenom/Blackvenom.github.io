@@ -183,6 +183,13 @@ video {
     border-radius: 8px;
 }
 
+.iframe-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .impressum, .credits
 {
     padding: 25px;
